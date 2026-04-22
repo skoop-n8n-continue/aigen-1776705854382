@@ -3,116 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura Weather Hub</title>
+    <title>Jade Transit Terminal</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="styles.css?v=z8n4p2">
+    <link rel="stylesheet" href="styles.css?v=j9d3z">
     <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-container">
-        <img src="https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/skoop-n8n-continue%2Faigen-1776705854382%2Fassets%2Faura_weather_background-1776875171334.png" alt="Atmospheric Background" class="bg-image">
+        <img src="https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/skoop-n8n-continue%2Faigen-1776705854382%2Fassets%2Fjade_transit_bg-1776876142874.png" alt="Futuristic Terminal" class="bg-image" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=1920'">
         <div class="overlay"></div>
     </div>
 
-    <main class="dashboard">
-        <header class="header">
-            <div class="location-info">
-                <h1 id="city-name">London</h1>
-                <p id="current-date">Wednesday, April 22, 2026</p>
+    <main class="terminal-dashboard">
+        <header class="terminal-header">
+            <div class="brand">
+                <div class="logo">J</div>
+                <div class="title-group">
+                    <h1>JADE TERMINAL</h1>
+                    <p>DEPARTURES & HUB STATUS</p>
+                </div>
             </div>
-            <div class="current-time" id="clock">12:00 PM</div>
+            <div class="time-block">
+                <div id="clock">12:00:00</div>
+                <div id="date">Wednesday, April 22, 2026</div>
+            </div>
         </header>
 
-        <section class="bento-grid">
-            <!-- Main Weather Card -->
-            <div class="card main-weather glass">
-                <div class="weather-main-info">
-                    <div class="temp-container">
-                        <span id="current-temp">24</span><span class="unit">°</span>
-                    </div>
-                    <div class="condition-container">
-                        <div id="weather-icon" class="weather-icon-3d">☀️</div>
-                        <p id="weather-desc">Partly Cloudy</p>
-                    </div>
-                </div>
-                <div class="temp-range">
-                    <span>H: 26°</span>
-                    <span>L: 18°</span>
-                </div>
+        <section class="departure-board glass">
+            <div class="board-header">
+                <div class="col time">TIME</div>
+                <div class="col flight">ID</div>
+                <div class="col destination">DESTINATION</div>
+                <div class="col gate">GATE</div>
+                <div class="col status">STATUS</div>
             </div>
-
-            <!-- Detailed Stats -->
-            <div class="card stat-card glass">
-                <h3>UV Index</h3>
-                <div class="stat-value" id="uv-index">4</div>
-                <div class="stat-meta">Moderate</div>
-                <div class="uv-bar"><div class="uv-progress" style="width: 40%"></div></div>
-            </div>
-
-            <div class="card stat-card glass">
-                <h3>Wind</h3>
-                <div class="stat-value"><span id="wind-speed">12</span> <small>km/h</small></div>
-                <div class="stat-meta" id="wind-dir">NW</div>
-                <div class="wind-icon">💨</div>
-            </div>
-
-            <div class="card stat-card glass">
-                <h3>Humidity</h3>
-                <div class="stat-value" id="humidity">65%</div>
-                <div class="stat-meta">Dew point: 14°</div>
-            </div>
-
-            <div class="card stat-card glass">
-                <h3>Visibility</h3>
-                <div class="stat-value" id="visibility">10 <small>km</small></div>
-                <div class="stat-meta">Clear sky</div>
-            </div>
-
-            <!-- Forecast -->
-            <div class="card forecast-card glass">
-                <h3>5-Day Forecast</h3>
-                <div class="forecast-container" id="forecast-list">
-                    <!-- Forecast items will be injected here via script -->
-                </div>
-            </div>
-
-            <!-- Air Quality / Extra Info -->
-            <div class="card extra-card glass">
-                <h3>Air Quality</h3>
-                <div class="aqi-container">
-                    <div class="aqi-value" id="aqi">22</div>
-                    <div class="aqi-status">Excellent</div>
-                </div>
-                <p class="aqi-desc">Air quality is ideal for outdoor activities.</p>
+            <div class="board-rows" id="departure-rows">
+                <!-- Rows injected by JS -->
             </div>
         </section>
 
-        <footer class="footer">
+        <section class="info-grid">
+            <div class="card status-card glass">
+                <h3>NETWORK STATUS</h3>
+                <div class="status-indicator">
+                    <div class="pulse green"></div>
+                    <span>ALL SYSTEMS OPERATIONAL</span>
+                </div>
+            </div>
+            <div class="card weather-card glass">
+                <h3>LOCAL WEATHER</h3>
+                <div class="weather-mini">
+                    <span class="icon">☁️</span>
+                    <span class="temp">22°C</span>
+                    <span class="desc">OVERCAST</span>
+                </div>
+            </div>
+            <div class="card occupancy-card glass">
+                <h3>HUB CAPACITY</h3>
+                <div class="capacity-bar">
+                    <div class="fill" style="width: 64%"></div>
+                </div>
+                <span class="label">64% OCCUPIED</span>
+            </div>
+        </section>
+
+        <footer class="terminal-footer">
             <div class="ticker-wrap">
                 <div class="ticker">
-                    <span class="ticker-item">Weather Alert: No active alerts for your area.</span>
-                    <span class="ticker-item">Tips: Stay hydrated during the afternoon sun.</span>
-                    <span class="ticker-item">Did you know? Today's sunset is at 8:12 PM.</span>
-                    <span class="ticker-item">Forecast Update: Expect light showers tomorrow morning.</span>
+                    <span class="ticker-item">PASSENGER NOTICE: GATE 12B NOW OPEN FOR BOARDING TO TOKYO-NARITA.</span>
+                    <span class="ticker-item">REMINDER: PLEASE KEEP YOUR BELONGINGS WITH YOU AT ALL TIMES.</span>
+                    <span class="ticker-item">MAINTENANCE ALERT: ELEVATOR 4 IS CURRENTLY UNDER SERVICE.</span>
+                    <span class="ticker-item">JADE LOUNGE: ENJOY 20% OFF ALL REFRESHMENTS UNTIL 4 PM.</span>
                 </div>
             </div>
         </footer>
     </main>
 
-    <script src="script.js?v=z8n4p2"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./sw.js')
-          .then(function (reg) { console.log('[PWA] SW registered:', reg.scope); })
-          .catch(function (err) { console.warn('[PWA] SW registration failed:', err); });
-      });
-    }
-  </script>
+    <script src="script.js?v=j9d3z"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(function (reg) { console.log('[PWA] SW registered:', reg.scope); })
+                    .catch(function (err) { console.warn('[PWA] SW registration failed:', err); });
+            });
+        }
+    </script>
 </body>
 </html>
