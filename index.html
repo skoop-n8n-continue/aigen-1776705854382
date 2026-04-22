@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Fusion Dashboard</title>
+    <link rel="stylesheet" href="styles.css?v=f9x2j1">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-container">
+        <img src="https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/skoop-n8n-continue%2Faigen-1776705854382%2Fassets%2Fdashboard_bg-1776874766322.png" alt="Background" class="bg-image">
+        <div class="overlay"></div>
+    </div>
+
+    <main class="dashboard-grid">
+        <!-- Header Section -->
+        <header class="grid-item header-item glass">
+            <div class="logo-area">
+                <i data-lucide="zap" class="logo-icon"></i>
+                <span class="logo-text">FUSION</span>
+            </div>
+            <div class="time-date">
+                <div id="current-time">12:00:00</div>
+                <div id="current-date">Wednesday, April 22, 2026</div>
+            </div>
+        </header>
+
+        <!-- Weather Widget -->
+        <section class="grid-item weather-item glass">
+            <div class="weather-info">
+                <i data-lucide="sun" id="weather-icon"></i>
+                <div class="temp">72°F</div>
+                <div class="condition">Sunny</div>
+            </div>
+            <div class="location">San Francisco, CA</div>
+        </section>
+
+        <!-- Hero Content (Rotating) -->
+        <section class="grid-item hero-item glass">
+            <div class="carousel" id="hero-carousel">
+                <div class="carousel-slide active">
+                    <img src="https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/skoop-n8n-continue%2Faigen-1776705854382%2Fassets%2Fhero_building-1776874822813.png" alt="Summit" class="carousel-img">
+                    <div class="carousel-text">
+                        <h3>Welcome to the Global Summit</h3>
+                        <p>Main Hall | 09:00 AM - 11:30 AM</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/skoop-n8n-continue%2Faigen-1776705854382%2Fassets%2Fhero_team-1776874850029.png" alt="Team" class="carousel-img">
+                    <div class="carousel-text">
+                        <h3>Q2 Performance Update</h3>
+                        <p>Sales targets exceeded by 15.4%</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <h3>Safety First</h3>
+                    <p>428 Days without a recorded incident</p>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="hero-progress"></div>
+            </div>
+        </section>
+
+        <!-- KPI / Metrics -->
+        <section class="grid-item kpi-item glass">
+            <div class="kpi-header">
+                <i data-lucide="trending-up"></i>
+                <span>NETWORK STATUS</span>
+            </div>
+            <div class="kpi-value">99.9%</div>
+            <div class="kpi-label">UPTIME ACROSS NODES</div>
+        </section>
+
+        <section class="grid-item kpi-item glass">
+            <div class="kpi-header">
+                <i data-lucide="users"></i>
+                <span>VISITOR TRAFFIC</span>
+            </div>
+            <div class="kpi-value">1,284</div>
+            <div class="kpi-label">TOTAL TODAY</div>
+        </section>
+
+        <section class="grid-item metric-item glass">
+            <div class="metric-title">Project Delta Status</div>
+            <div class="metric-chart-container">
+                <div class="chart-bar" style="height: 40%;"></div>
+                <div class="chart-bar" style="height: 60%;"></div>
+                <div class="chart-bar" style="height: 80%;"></div>
+                <div class="chart-bar" style="height: 50%;"></div>
+                <div class="chart-bar" style="height: 90%;"></div>
+            </div>
+        </section>
+
+        <!-- News Ticker -->
+        <footer class="grid-item ticker-item glass">
+            <div class="ticker-label">BREAKING</div>
+            <div class="ticker-wrapper">
+                <div class="ticker-content" id="news-ticker">
+                    <span>Fusion v2.0 update scheduled for next week.</span>
+                    <span>New regional office opening in Tokyo.</span>
+                    <span>Quarterly town hall meeting relocated to Studio B.</span>
+                    <span>Employee of the month: Sarah Jenkins.</span>
+                    <span>Local weather alert: High winds expected this evening.</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js?v=f9x2j1"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
